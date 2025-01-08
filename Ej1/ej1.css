@@ -1,0 +1,34 @@
+.boton{
+    margin-top: 20px;
+}
+.botoncambiar{
+    margin-top: 2px;
+}
+img{
+    width: 250px;
+    margin-bottom: -5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    border: 0px;
+}
+#elementos{
+    display: flex;
+    flex-wrap: wrap;
+}
+.elemento{
+    margin-left: 20px;
+    margin-right: 0px;
+    padding: 0px;
+    border: 0px;
+    line-height: 1;
+    background-color: transparent;
+}
+.botonblock{
+    display: block;
+    width: 250px;
+    height: 25px;
+}
+.botonborrar{
+    margin-bottom: 0px;
+}

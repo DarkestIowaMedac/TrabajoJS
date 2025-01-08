@@ -1,0 +1,24 @@
+body {
+    margin: 0; 
+    padding: 0;
+}
+#pantalla{
+    color: white;
+    box-sizing: border-box;
+    padding-top: 70px;
+    width: 100%;
+    height: 500px;
+    background-color: rgb(26, 111, 181);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-size: 64px;
+    font-weight: 500;
+}
+h2{
+    font-weight: 500;
+    margin-top: -15px;
+}
