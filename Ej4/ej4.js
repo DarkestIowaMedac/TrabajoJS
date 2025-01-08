@@ -8,8 +8,9 @@ const h22 = pantalla.find('#h22');
 let tiempo = 0
 let tiempoInicio = 0
 let clickado = false
-const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-pantalla.on('mousedown', async () => {
+let timeoutid
+
+pantalla.on('mousedown',() => {
     if(estado == 0){
         pantalla.css('background-color', '#EF0F31')
         imagen.attr('src', "./imagenes/puntosn.png")
@@ -18,21 +19,22 @@ pantalla.on('mousedown', async () => {
         h22.text('')
         estado = 1
         clickado = false
-        
         let espera = Math.random() * 5000 + 2000;
         
-        await sleep(espera)
-        if(clickado == false){
-            pantalla.css('background-color', '#1ab558') 
-            imagen.attr('src', './imagenes/puntosn.png')
-            h1.text('Click!')
-            h21.text('')
-            h22.text('')
-            tiempoInicio = Date.now()
-            estado = 2
-        }
+        timeoutid = setTimeout(() => {
+            if(clickado == false){
+                pantalla.css('background-color', '#1ab558') 
+                imagen.attr('src', './imagenes/puntosn.png')
+                h1.text('Click!')
+                h21.text('')
+                h22.text('')
+                tiempoInicio = Date.now()
+                estado = 2
+            }
+        },espera)
     }  
     else if(estado == 1){
+        clearTimeout(timeoutid);
         clickado = true
         pantalla.css('background-color', '#1A6FB5')
         imagen.attr('src','./imagenes/admiracionn.png')
@@ -42,6 +44,7 @@ pantalla.on('mousedown', async () => {
         estado = 0
     }
     else if(estado == 2){
+        clearTimeout(timeoutid);
         clickado = true
         let tiempo = Date.now() - tiempoInicio
         pantalla.css('background-color', '#1A6FB5')
