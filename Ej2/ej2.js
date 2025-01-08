@@ -9,7 +9,7 @@ let tiempo = 0
 let tiempoInicio = 0
 let clickado = false
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-pantalla.addEventListener('click',async () => {
+pantalla.addEventListener('mousedown',async () => {
 
     if(estado == 0){
         pantalla.style.backgroundColor = '#EF0F31'
@@ -19,9 +19,7 @@ pantalla.addEventListener('click',async () => {
         h22.innerText = ''
         estado = 1
         clickado = false
-        
         let espera = Math.random() * 5000 + 2000;
-        
         await sleep(espera)
         if(clickado == false){
             pantalla.style.backgroundColor = '#1ab558'

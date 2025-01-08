@@ -9,7 +9,7 @@ let tiempo = 0
 let tiempoInicio = 0
 let clickado = false
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-pantalla.on('click', async () => {
+pantalla.on('mousedown', async () => {
     if(estado == 0){
         pantalla.css('background-color', '#EF0F31')
         imagen.attr('src', "./imagenes/puntosn.png")
